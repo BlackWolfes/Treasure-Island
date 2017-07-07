@@ -2,64 +2,31 @@
 <html>
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Treasure Island</title>
+    <!-- JQuery 3.2.1 
+    <script src="./lib/leaflet/jquery-3.2.1.min.js"></script>-->
+    <!-- LeafLet 1.1.0 -->
+    <script src="./lib/leaflet/leaflet.js"></script>
+    <!-- Mouse Position -->
+    <script src="./lib/Leaflet.MousePosition-master/src/L.Control.MousePosition.js"></script>
+    <!-- CSS LeafLet 1.1.0 -->
     <link rel="stylesheet" href="./lib/leaflet/leaflet.css" />
-
-    <style>
-    body {
-        padding: 0;
-        margin: 0;
-    }
-    
-    html,
-    body,
-    #map {
-        height: 100%;
-    }
-
-    </style>
+    <!-- CSS Main -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 
 <body>
-    <script src="./lib/leaflet/leaflet.js"></script>
+    <div id="titulo">Treasure Island</div>
     <div id="map"></div>
-    <script>
-    var map = L.map('map', {
-        center: [40.965, -5.664],
-        zoom: 16
-    });
-
-     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYmxhY2t3b2xmZXMiLCJhIjoiY2lwOGRna3VtMDAwcXhxbTd4MXNkcGYzciJ9.-y9jRhzTHMKsnKt_b3tFnQ', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org"> OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        id: 'mapbox.pirates'
-    }).addTo(map);
-
-    var geojson = [{
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-5.66237, 40.96618, ]
-        },
-        "properties": {
-            "name": "Teatro",
-            "title": "Teatro Liceo"
-        }
-    }, {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-5.66814, 40.96187]
-        },
-        "properties": {
-            "name": "Museo",
-            "title": "Museo de Salamanca"
-        }
-    }];
-    var geoJsonLayer = L.geoJson(geojson).addTo(map);
-    </script>
+    <script src="./js/main.js"></script>
+    <div style="display: none;" id="hiddenText">Calle Pan y Carbón</div>
+    <div id="pie">
+        Al este del <a href="#" onclick="alert('Se refiere a la Calle Pan y Carbón')">pan negro</a>, la <a href="#" onclick="alert('La estatua de Cristobal Colón dentro de la Plaza Colón')">estatua de un descubridor </a> divisa un <a href="#" onclick="alert('El convento de San Esteban')">convento de Dominicos </a> y, yendo hacia el sur cruzaremos el paseo de <a href="#" onclick="alert('Paseo del Rector Esperabé')">famoso rector </a> nos encontraremos con <a href="#" onclick="alert('Colegio del Sagrado Corazón')">un colegio de jesuitinas </a>.
+        </br>
+    </div>
 </body>
 
 </html>
