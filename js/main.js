@@ -1,7 +1,7 @@
   // Valores iniciales mapa
   var map = L.map('map', {
       center: [40.9612, -5.66387],
-      zoom: 16
+      zoom: 15
   });
 
   // Mapa base Pirates
@@ -15,9 +15,9 @@
   // Elementos de mapa
 
   var point01 = L.marker([40.96251, -5.66452], {
-          title: "Calle Pan y Carbón",
-          opacity: 100
-      }).addTo(map);
+      title: "Calle Pan y Carbón",
+      opacity: 100
+  }).addTo(map);
 
   var point02 = L.marker([40.96238, -5.66388], {
       title: "Estatua Cristobal Colon",
@@ -35,15 +35,58 @@
       opacity: 100
   }).addTo(map);
 
-    var point05 = L.marker([40.9578, -5.66448], {
-      title: "Colegio del Sagrado Corazón",
+  var point05 = L.marker([40.9578, -5.66448], {
+          title: "Colegio del Sagrado Corazón",
+          opacity: 100,
+          draggable: true
+      })
+      //.on('click', markerOnClick)
+      .addTo(map);
+
+  var point06 = L.marker([40.95594, -5.65665], {
+      title: "Parque de los Jerónimos",
       opacity: 100
   }).addTo(map);
 
+  var point07 = L.marker([40.96153, -5.65665], {
+      title: "Parque Huerta de los Jesuitas",
+      opacity: 100
+  }).addTo(map);
 
+  var point08 = L.marker([40.96593, -5.65665], {
+      title: "Calle Honduras",
+      opacity: 100
+  }).addTo(map);
+
+  var point09 = L.marker([40.96593, -5.65812], {
+      title: "Colegio San Juan Bosco",
+      opacity: 100
+  }).addTo(map);
+
+  var point10 = L.marker([40.96657, -5.66137], {
+      title: "Plaza Santa Eulalia",
+      opacity: 100
+  }).addTo(map);
+
+  var point11 = L.marker([40.96702, -5.66323], {
+      title: "Agencia Tributaria",
+      opacity: 100
+  }).addTo(map);
 
   // Mostrar coordenadas de raton
   L.control.mousePosition().addTo(map);
+
+  // Mostrar escala
+  var graphicScale = L.control.graphicScale({
+      fill: 'fill',
+      minUnitWidth: 10
+
+  }).addTo(map);
+
+
+  var scaleText = L.DomUtil.create('div', 'scaleText');
+  graphicScale._container.insertBefore(scaleText, graphicScale._container.firstChild);
+
 
   // Funcion onClick
   function markerOnClick(e) {

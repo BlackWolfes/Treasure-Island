@@ -1,6 +1,6 @@
  #titulo {
-    padding-top: 5px;
-    padding-bottom: 10px;
+     padding-top: 5px;
+     padding-bottom: 10px;
      font-family: 'Princess Sofia', cursive;
      font-size: 60px;
      text-align: center;
@@ -12,8 +12,7 @@
      height: 100%;
      width: 100%;
  }
-
-
+ 
  #titulo {
      margin: 0;
      height: 10%;
@@ -44,4 +43,31 @@
      margin: 0;
      color: #BDB5B;
      font: 8px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+ }
+ 
+ .leaflet-control-graphicscale {
+     background-color: rgba(254, 246, 237, .5);
+     background-image: url(../image/noise.png);
+     padding: 5px 5px 5px 5px;
+     box-shadow: 0px 0px 30px rgba(52, 38, 13, .5);
+     color: rgb(107, 55, 32);
+ }
+ 
+ .leaflet-control-graphicscale .label {
+     font-family: 'Princess Sofia', cursive;
+     font-size: 11px;
+     margin-bottom: 5px;
+ }
+ 
+ .leaflet-control-graphicscale .labelSub {
+     font-size: 11px;
+     margin-bottom: 5px;
+ }
+ 
+ .leaflet-control-graphicscale .line {
+     border-color: rgb(107, 55, 32);
+ }
+ 
+ .leaflet-control-graphicscale .filled .fill {
+     background-color: rgb(107, 55, 32);
  }
