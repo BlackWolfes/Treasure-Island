@@ -1,42 +1,46 @@
+
+ html,
+ body {
+   margin: 10 10 10 10px; 
+   text-align: center; 
+   background-color: #ebebe
+ }
+ 
+ p {
+     margin:5px;
+ }
+ #contenedor{ 
+   text-align: left; 
+   margin: 10 10 10 10px; 
+}
  #titulo {
-     padding-top: 5px;
+     padding-top: 15px;
      padding-bottom: 10px;
      font-family: 'Princess Sofia', cursive;
      font-size: 60px;
      text-align: center;
  }
  
- html,
- body {
-     margin: 0;
-     height: 100%;
-     width: 100%;
- }
- 
- #titulo {
-     margin: 0;
-     height: 10%;
-     width: 100%;
-     font-family: 'Princess Sofia', cursive;
-     font-size: 60px;
-     text-align: center;
- }
- 
- #map {
-     margin: 0;
-     height: 75%;
-     width: 100%;
- }
- 
- #pie {
-     padding-top: 10px;
-     padding-bottom: 5px;
-     height: 10%;
-     width: 100%;
-     font-family: 'Oswald', sans-serif;
+#cuerpo{ 
+   margin: 0;
+} 
+#lateral{ 
+   width: 160px; 
+   background-color: #FDF6EE; 
+   border-color: black;
+   float:left; 
+   font-family: 'Oswald', sans-serif;
      font-size: 14px;
-     text-align: left;
+} 
+ #map {
+     
+   margin-left: 170px; 
+   background-color: #ffffff; 
+   padding: 4 4 4 4px; 
+   height: 600px;
  }
+ 
+
  
  .leaflet-container .leaflet-control-mouseposition {
      background-color: rgba(255, 255, 255, 0.7);
@@ -73,3 +77,28 @@
  .leaflet-control-graphicscale .filled .fill {
      background-color: rgb(107, 55, 32);
  }
+
+
+#buttonbar{
+     text-align: center;
+     padding: 5px;
+}
+
+button {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: 'Princess Sofia', cursive;
+  color: #92856D;
+  font-size: 22px;
+  background: #FAF3EC;
+  padding: 5px 5px 5px 5px;
+  border: solid #1f628d 2px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #DAB39E;
+  text-decoration: none;
+}
+

@@ -13,14 +13,25 @@
   }).addTo(map);
 
   // Mostramos los puntos de GeoJSON en datos.js
-    var PuntosGeo = L.geoJson(PuntosRutaJSON, {
-        onEachFeature: function(feature, layer) {
-            layer.bindPopup(feature.properties.title);
-        }
-    }).addTo(map);
+  var PuntosGeo = L.geoJson(PuntosRutaJSON, {
+      onEachFeature: function(feature, layer) {
+          layer.bindPopup(feature.properties.title);
+      }
+  }).addTo(map);
 
   // Mostrar coordenadas de raton
   L.control.mousePosition().addTo(map);
+
+  //Seleccionar lugar
+    var searchControl = new L.Control.Search({
+        layer: PuntosGeo,
+        propertyName: 'name',
+        circleLocation: true,
+        initial: false,
+        container: 'findbox',
+        collapsed: false
+    });
+    map.addControl(searchControl); //inizialize search control
 
   // Mostrar escala
   var graphicScale = L.control.graphicScale({
@@ -31,17 +42,30 @@
   var scaleText = L.DomUtil.create('div', 'scaleText');
   graphicScale._container.insertBefore(scaleText, graphicScale._container.firstChild);
 
+  function ruta(n) {
+      var pointA = new L.latLng(PuntosRutaJSON[n - 1].geometry.coordinates[1], PuntosRutaJSON[n - 1].geometry.coordinates[0]);
+      var pointB = new L.latLng(PuntosRutaJSON[n].geometry.coordinates[1], PuntosRutaJSON[n].geometry.coordinates[0]);
+      var pointList = [pointA, pointB];
+      console.log(pointB);
+      var firstpolyline = new L.Polyline(pointList, {
+          color: 'blue',
+          weight: 5,
+          opacity: 0.8,
+          smoothFactor: 1
+      });
+      firstpolyline.addTo(map);
 
-function ruta(n){
+  };
 
-   var existeRuta =  L.Routing.control({
-    waypoints: [
-        L.latLng(PuntosRutaJSON[n-1].geometry.coordinates[1] , PuntosRutaJSON[n-1].geometry.coordinates[0]),
-        L.latLng(PuntosRutaJSON[n].geometry.coordinates[1] , PuntosRutaJSON[1].geometry.coordinates[0])
-    ],
-    routeWhileDragging: false
-  }).addTo(map);
+  function rutaCoche() {
+
+      var existeRuta = L.Routing.control({
+          waypoints: [
+              L.latLng(PuntosRutaJSON[0].geometry.coordinates[1], PuntosRutaJSON[0].geometry.coordinates[0]),
+              L.latLng(PuntosRutaJSON[10].geometry.coordinates[1], PuntosRutaJSON[10].geometry.coordinates[0])
+          ],
+          routeWhileDragging: false
+      }).addTo(map);
 
 
-};
-
+  };
