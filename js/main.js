@@ -9,31 +9,37 @@
       maxZoom: 20,
       minZoom: 14,
       attribution: '<a href="http://mapbox.com">Mapbox</a>',
-      id: 'mapbox.dark'
+      id: 'mapbox.pirates'
   }).addTo(map);
 
   // Mostramos los puntos de GeoJSON en datos.js
   var PuntosGeo = L.geoJson(PuntosRutaJSON, {
+      pointToLayer: function(feature, latlng) {
+          var smallIcon = L.Icon({
+              options: {
+                  iconSize: [27, 27],
+                  iconAnchor: [13, 27],
+                  popupAnchor: [1, -24],
+                  iconUrl: 'icone/chapel-2.png'
+              }
+          });
+          return L.marker(latlng, { icon: smallIcon });
+      },
       onEachFeature: function(feature, layer) {
           layer.bindPopup(feature.properties.title);
       }
   }).addTo(map);
 
-
-
+  // Busqueda por title
   var searchControl = new L.Control.Search({
-       layer: PuntosGeo,
-       propertyName: 'title',
-       circleLocation: false
-});
-
-
-searchControl.on('search_locationfound', function(e) {
-       e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
-})
-
-  
-map.addControl(searchControl);
+      layer: PuntosGeo,
+      propertyName: 'title',
+      circleLocation: false
+  });
+  searchControl.on('search_locationfound', function(e) {      
+      e.layer.setStyle({ fillColor: '#3f0', color: '#0f0' });
+  });
+  map.addControl(searchControl);
 
   // Mostrar coordenadas de raton
   L.control.mousePosition().addTo(map);
