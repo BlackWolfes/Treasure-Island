@@ -12,25 +12,34 @@
       id: 'mapbox.pirates'
   }).addTo(map);
 
-  // Mostramos los puntos de GeoJSON en datos.js
+  // Definicion de los graficos de iconos
+  var smallIcon = new L.Icon({
+      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon.png',
+      iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      shadowSize: [41, 41]
+  });
+
+
+  // Añade los puntos al mapa
   var PuntosGeo = L.geoJson(PuntosRutaJSON, {
       pointToLayer: function(feature, latlng) {
-          var smallIcon = L.Icon({
-              options: {
-                  iconSize: [27, 27],
-                  iconAnchor: [13, 27],
-                  popupAnchor: [1, -24],
-                  iconUrl: 'icone/chapel-2.png'
-              }
+          return L.marker(latlng, {
+              icon: smallIcon
           });
-          return L.marker(latlng, { icon: smallIcon });
       },
-      onEachFeature: function(feature, layer) {
+      onEachFeature(feature, layer) {
           layer.bindPopup(feature.properties.title);
       }
   }).addTo(map);
 
-  // Busqueda por title
+
+
+
+// Busqueda por title
   var searchControl = new L.Control.Search({
       layer: PuntosGeo,
       propertyName: 'title',
