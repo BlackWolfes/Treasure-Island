@@ -11,14 +11,12 @@
     <!-- CSS Routing -->
     <link rel="stylesheet" href="./lib/leaflet-routing-machine-3.2.5/dist/leaflet-routing-machine.css" />
     <!-- CSS realizar busquedas -->
-    <link rel="stylesheet" href="./lib/leaflet-search/leaflet-search.css" />
+    <link rel="stylesheet" href="./lib/leaflet-search-master/src/leaflet-search.css" />
     <!-- CSS Main -->
     <link rel="stylesheet" href="./css/main.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    
-
     <!-- LeafLet 1.1.0 -->
     <script src="./lib/leaflet/leaflet.js"></script>
     <!-- Mouse Position -->
@@ -28,18 +26,19 @@
     <!-- Routing -->
     <script src="./lib/leaflet-routing-machine-3.2.5/dist/leaflet-routing-machine.min.js"></script>
     <!-- Realizar busquedas -->
-    <script src="./lib/leaflet-search/leaflet-search.js"></script>
+    <script src="./lib/leaflet-search-master/src/leaflet-search.js"></script>
 </head>
 
 <body>
+<div id="titulo">Treasure Island</div>
     <div id="contenedor">
-        <div id="titulo">Treasure Island</div>
+
         <div id="cuerpo">
             <div id="lateral">
                 <h2> Instrucciones </h2>
                 <p>Al este del <a href="#" onclick="alert('Se refiere a la Calle Pan y Carbón')">pan negro</a>, la <a href="#" onclick="alert('La estatua de Cristobal Colón dentro de la Plaza Colón')">estatua de un descubridor </a> divisa un <a href="#" onclick="alert('El convento de San Esteban')">convento de Dominicos </a> y, yendo hacia el sur, cruzando el paseo de <a href="#" onclick="alert('Paseo del Rector Esperabé')">famoso rector </a> nos encontraremos con <a href="#" onclick="alert('Colegio del Sagrado Corazón')">un colegio de jesuitinas </a>. Caminando 600 mts hacia donde el sol nace, <a href="#" onclick="alert('La estatua de Parque de los Jeronimos')">una zona verde</a> nos permitira descansar antes de atravesar una <a href="#" onclick="alert('Parque Huerta de los Jesuitas')">gran parque al norte</a> y, siguiendo esa ruta, llegaremos a una calle divisada por primera vez por D. Gil González Dávila. Muy cerca, a 100 metros al oeste, el <a href="#" onclick="alert('Colegio San Juan Bosco')">fundador de los Salesianos</a> da nombre a un colegio y, continuadno en linea recta, <a href="#" onclick="alert('Plaza de Santa Eulalia')">una plaza con nombre de santa</a> nos permitira un breve descanso. Solo 200 metros al oeste, nos separa de nuesto tesoro, donde las <a href="#" onclick="alert('Delegación de la Agencia Tributaría')">rentas</a> se guardan.</p>
             </div>
-            <div id="map">fgdfg</div>
+            <div id="map"></div>
             <div id="buttonbar">
                 <button id="Paso 1" onclick="ruta(1);">Paso 1</button>
                 <button id="Paso 2" onclick="ruta(2);">Paso 2</button>

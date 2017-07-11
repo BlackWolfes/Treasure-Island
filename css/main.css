@@ -1,104 +1,105 @@
-
- html,
- body {
-   margin: 10 10 10 10px; 
-   text-align: center; 
-   background-color: #ebebe
- }
- 
- p {
-     margin:5px;
- }
- #contenedor{ 
-   text-align: left; 
-   margin: 10 10 10 10px; 
+html,
+body {
+    margin: 10 10 10 10px;
+    text-align: center;
+    background-color: #ebebe
 }
- #titulo {
-     padding-top: 15px;
-     padding-bottom: 10px;
-     font-family: 'Princess Sofia', cursive;
-     font-size: 60px;
-     text-align: center;
- }
- 
-#cuerpo{ 
-   margin: 0;
-} 
-#lateral{ 
-   width: 160px; 
-   background-color: #FDF6EE; 
-   border-color: black;
-   float:left; 
-   font-family: 'Oswald', sans-serif;
-     font-size: 14px;
-} 
- #map {
-     
-   margin-left: 170px; 
-   background-color: #ffffff; 
-   padding: 4 4 4 4px; 
-   height: 600px;
- }
- 
 
- 
- .leaflet-container .leaflet-control-mouseposition {
-     background-color: rgba(255, 255, 255, 0.7);
-     box-shadow: 0 0 5px #bbb;
-     padding: 0 5px;
-     margin: 0;
-     color: #BDB5B;
-     font: 8px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
- }
- 
- .leaflet-control-graphicscale {
-     background-color: rgba(254, 246, 237, .5);
-     background-image: url(../image/noise.png);
-     padding: 5px 5px 5px 5px;
-     box-shadow: 0px 0px 30px rgba(52, 38, 13, .5);
-     color: rgb(107, 55, 32);
- }
- 
- .leaflet-control-graphicscale .label {
-     font-family: 'Princess Sofia', cursive;
-     font-size: 11px;
-     margin-bottom: 5px;
- }
- 
- .leaflet-control-graphicscale .labelSub {
-     font-size: 11px;
-     margin-bottom: 5px;
- }
- 
- .leaflet-control-graphicscale .line {
-     border-color: rgb(107, 55, 32);
- }
- 
- .leaflet-control-graphicscale .filled .fill {
-     background-color: rgb(107, 55, 32);
- }
+p,
+h1,
+h2 {
+    margin: 5px;
+}
 
+#contenedor {
+    text-align: left;
+    margin: 10 10 10 10px;
+}
 
-#buttonbar{
-     text-align: center;
-     padding: 5px;
+#titulo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Princess Sofia', cursive;
+    font-size: 26px;
+    text-align: center;
+    background-color: #FDF6EE;
+}
+
+#cuerpo {
+    margin: 0;
+}
+
+#lateral {
+    width: 160px;
+    background-color: #FDF6EE;
+    border-color: black;
+    float: left;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+}
+
+#map {
+    margin-left: 160px;
+    background-color: #ffffff;
+    padding: 4 4 4 4px;
+    height: 600px;
+}
+
+.leaflet-container .leaflet-control-mouseposition {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 5px #bbb;
+    padding: 0 5px;
+    margin: 0;
+    color: #BDB5B;
+    font: 8px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.leaflet-control-graphicscale {
+    background-color: rgba(254, 246, 237, .5);
+    background-image: url(../image/noise.png);
+    padding: 5px 5px 5px 5px;
+    box-shadow: 0px 0px 30px rgba(52, 38, 13, .5);
+    color: rgb(107, 55, 32);
+}
+
+.leaflet-control-graphicscale .label {
+    font-family: 'Princess Sofia', cursive;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.leaflet-control-graphicscale .labelSub {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.leaflet-control-graphicscale .line {
+    border-color: rgb(107, 55, 32);
+}
+
+.leaflet-control-graphicscale .filled .fill {
+    background-color: rgb(107, 55, 32);
+}
+
+#buttonbar {
+    text-align: center;
+    padding: 5px;
 }
 
 button {
-  -webkit-border-radius: 6;
-  -moz-border-radius: 6;
-  border-radius: 6px;
-  font-family: 'Princess Sofia', cursive;
-  color: #92856D;
-  font-size: 22px;
-  background: #FAF3EC;
-  padding: 5px 5px 5px 5px;
-  border: solid #1f628d 2px;
-  text-decoration: none;
+    -webkit-border-radius: 6;
+    -moz-border-radius: 6;
+    border-radius: 6px;
+    font-family: 'Princess Sofia', cursive;
+    color: #92856D;
+    font-size: 22px;
+    background: #FAF3EC;
+    padding: 5px 5px 5px 5px;
+    border: solid #1f628d 2px;
+    text-decoration: none;
 }
 
 button:hover {
-  background: #DAB39E;
-  text-decoration: none;
+    background: #DAB39E;
+    text-decoration: none;
 }
-

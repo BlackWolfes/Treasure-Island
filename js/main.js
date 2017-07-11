@@ -9,7 +9,7 @@
       maxZoom: 20,
       minZoom: 14,
       attribution: '<a href="http://mapbox.com">Mapbox</a>',
-      id: 'mapbox.pirates'
+      id: 'mapbox.dark'
   }).addTo(map);
 
   // Mostramos los puntos de GeoJSON en datos.js
@@ -19,29 +19,34 @@
       }
   }).addTo(map);
 
+
+
+  var searchControl = new L.Control.Search({
+       layer: PuntosGeo,
+       propertyName: 'title',
+       circleLocation: false
+});
+
+
+searchControl.on('search_locationfound', function(e) {
+       e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+})
+
+  
+map.addControl(searchControl);
+
   // Mostrar coordenadas de raton
   L.control.mousePosition().addTo(map);
-
-  //Seleccionar lugar
-    var searchControl = new L.Control.Search({
-        layer: PuntosGeo,
-        propertyName: 'name',
-        circleLocation: true,
-        initial: false,
-        container: 'findbox',
-        collapsed: false
-    });
-    map.addControl(searchControl); //inizialize search control
 
   // Mostrar escala
   var graphicScale = L.control.graphicScale({
       fill: 'fill',
       minUnitWidth: 10
   }).addTo(map);
-
   var scaleText = L.DomUtil.create('div', 'scaleText');
   graphicScale._container.insertBefore(scaleText, graphicScale._container.firstChild);
 
+  // Botones que marcan con polilineas los pasos a seguir
   function ruta(n) {
       var pointA = new L.latLng(PuntosRutaJSON[n - 1].geometry.coordinates[1], PuntosRutaJSON[n - 1].geometry.coordinates[0]);
       var pointB = new L.latLng(PuntosRutaJSON[n].geometry.coordinates[1], PuntosRutaJSON[n].geometry.coordinates[0]);
@@ -54,11 +59,10 @@
           smoothFactor: 1
       });
       firstpolyline.addTo(map);
-
   };
 
+  // Boton que marca el reocrrido desde el punto 1 al ultimo
   function rutaCoche() {
-
       var existeRuta = L.Routing.control({
           waypoints: [
               L.latLng(PuntosRutaJSON[0].geometry.coordinates[1], PuntosRutaJSON[0].geometry.coordinates[0]),
@@ -66,6 +70,4 @@
           ],
           routeWhileDragging: false
       }).addTo(map);
-
-
   };
