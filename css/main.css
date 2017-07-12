@@ -31,8 +31,7 @@ h2 {
 
 #lateral {
     width: 160px;
-    background-color: #FDF6EE;
-    border-color: black;
+    background-color: #E2C5AB;
     float: left;
     font-family: 'Oswald', sans-serif;
     font-size: 14px;
@@ -66,11 +65,13 @@ h2 {
     font-family: 'Princess Sofia', cursive;
     font-size: 11px;
     margin-bottom: 5px;
+    color: rgb(107, 55, 32);
 }
 
 .leaflet-control-graphicscale .labelSub {
     font-size: 11px;
     margin-bottom: 5px;
+    color: rgb(107, 55, 32);
 }
 
 .leaflet-control-graphicscale .line {

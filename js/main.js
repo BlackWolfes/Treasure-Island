@@ -1,34 +1,27 @@
   // Valores iniciales mapa
   var map = L.map('map', {
-      center: [40.9612, -5.66387],
+      center: [40.964407, -5.664499],
       zoom: 15
   });
 
   // Mapa base Pirates
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYmxhY2t3b2xmZXMiLCJhIjoiY2lwOGRna3VtMDAwcXhxbTd4MXNkcGYzciJ9.-y9jRhzTHMKsnKt_b3tFnQ', {
-      maxZoom: 20,
+      maxZoom: 18,
       minZoom: 14,
       attribution: '<a href="http://mapbox.com">Mapbox</a>',
       id: 'mapbox.pirates'
   }).addTo(map);
 
-  // Definicion de los graficos de iconos
-  var smallIcon = new L.Icon({
-      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon.png',
-      iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png',
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34],
-      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-      shadowSize: [41, 41]
-  });
 
-
-  // Añade los puntos al mapa
+  // Añade los puntos al mapa con iconos pesonalizados
   var PuntosGeo = L.geoJson(PuntosRutaJSON, {
       pointToLayer: function(feature, latlng) {
           return L.marker(latlng, {
-              icon: smallIcon
+              icon: L.AwesomeMarkers.icon({
+                  icon: 'glyphicon-tag',
+                  prefix: 'glyphicon',
+                  markerColor: 'red'
+              })
           });
       },
       onEachFeature(feature, layer) {
@@ -37,9 +30,7 @@
   }).addTo(map);
 
 
-
-
-// Busqueda por title
+  // Busqueda por title
   var searchControl = new L.Control.Search({
       layer: PuntosGeo,
       propertyName: 'title',
@@ -76,7 +67,7 @@
       firstpolyline.addTo(map);
   };
 
-  // Boton que marca el reocrrido desde el punto 1 al ultimo
+  // Boton que marca el reocrrido desde el punto 1 al ultimo (en Coche)
   function rutaCoche() {
       var existeRuta = L.Routing.control({
           waypoints: [
